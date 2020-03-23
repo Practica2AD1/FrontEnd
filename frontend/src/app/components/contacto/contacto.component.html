@@ -7,32 +7,27 @@
         <div class="card">
           <img src="assets\pictures\contactanos.png" class="card-img-top" alt="...">
           <!--img src="assets\pictures\1e7384aa03c16f7595fb554d377800bf.jpg" class="card-img-top" alt="..."-->
-          <div class="card-body">
-            <div> Juan Pablo Osuna de Leon - 201503911
-              <a class="btn btn-danger">Contactar</a>
-            </div>
-            <br />
 
-            <div> Jhonatan Leonel López Santos - 201325583
-              <a class="btn btn-danger">Contactar</a>
-            </div>
-            <br />
+          <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Correo</th>
+              </tr>
+            </thead>
+            <tbody>
 
-            <div> Diego Josue Berrios Gutierrez - 201503609
-              <a class="btn btn-danger">Contactar</a>
-            </div>
+              <tr *ngFor="let dev of devs;">
 
-            <br />
-            <div>Carlos Luis Pablo Hernández Gramajo - 201504497
-              <a class="btn btn-danger">Contactar</a>
-            </div>
+                <td>{{ dev.nombre }}</td>
+                <td>{{ dev.correo }}</td>
 
-            <br />
-            <div> Mario Obed Morales Guitz - 201213283
-              <a class="btn btn-danger">Contactar</a>
-            </div>
-            <br />
-          </div>
+              </tr>
+
+            </tbody>
+
+          </table>
+
         </div>
       </div>
     </div>

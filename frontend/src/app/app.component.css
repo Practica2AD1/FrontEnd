@@ -1,3 +1,7 @@
-h1, h2,p,a{
-    font:30px "Bauhaus 93", Times, serif;  
+h1, h2,p{
+    font:30px "Biome Light", Times, serif;  
     }
+
+a {
+    font:20px "Finland";  
+}
