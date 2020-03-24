@@ -19,7 +19,7 @@ describe('CotizacionComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('Componente Creado Correctamente', () => {
     expect(component).toBeTruthy();
   });
 
