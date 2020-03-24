@@ -9,7 +9,8 @@ import { InformacionComponent } from './components/informacion/informacion.compo
 import { InicioComponent } from './components/inicio/inicio.component';
 import { CotizacionComponent } from './components/cotizacion/cotizacion.component';
 
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { ServiceService } from './services/service.service'
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [HttpClientModule,HttpClient,ServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
