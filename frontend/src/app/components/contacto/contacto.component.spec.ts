@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
 import { ContactoComponent } from './contacto.component';
 
@@ -8,7 +9,9 @@ describe('ContactoComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ContactoComponent ]
+      declarations: [ ContactoComponent ],
+      imports: [HttpClientTestingModule]
+
     })
     .compileComponents();
   }));
@@ -19,7 +22,13 @@ describe('ContactoComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('Componente Creado Correctamente, Proveeidio del servicio', () => {
     expect(component).toBeTruthy();
+  });
+
+  it(`comrprobar imagen not found`, () => {
+    const fixture = TestBed.createComponent(ContactoComponent);
+    const app = fixture.debugElement.componentInstance;
+    expect(app.imagen.pathImagen).toEqual('assets/pictures/404.jpg');
   });
 });
