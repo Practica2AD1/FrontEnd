@@ -28,4 +28,13 @@ describe('InformacionComponent', () => {
   it('deberia de verse la foto inicial', () => {
     expect(component.currentPhoto).toEqual(0);
   });
+
+  it('deberia mostrar la imagen anterior', () => {
+    component.prev();
+  });
+
+  it('deberia mostrar la imagen siguiente', () => {
+    component.next();
+  });
+
 });
