@@ -23,12 +23,12 @@ export class CotizacionComponent implements OnInit {
     }
   ];
 
-  currentServicios = [];
+  currentServicios;// = [];
 
-  currentServicio = null;
+  currentServicio;// = null;
 
   servicios = [{
-      cantidad: 1,
+      cantidad: 0,
       servicio: {
         id: 1,
         nombre: "nombre",
@@ -44,6 +44,8 @@ export class CotizacionComponent implements OnInit {
   fecha: string;
 
   constructor() {
+    this.currentServicios = [];
+    this.currentServicio = null;
     this.nombre = "";
     this.apellido = "";
     this.correo = "";

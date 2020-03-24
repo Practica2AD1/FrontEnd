@@ -22,4 +22,16 @@ describe('CotizacionComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('Servicio actual debe de estar vacio', () => {
+    expect(component.currentServicio).toBeNull();
+  });
+
+  it('Metodo redondear debe de retornar un numero con un maximo de 2 decimales', () => {
+    expect(component.redondear(10.16666667)).toEqual(10.17);
+  });
+
+  it('Metodo generarTotal debe de ser igual o mayor a 0', () => {
+    expect(component.generarTotal()).toBeGreaterThanOrEqual(0);
+  })
 });
