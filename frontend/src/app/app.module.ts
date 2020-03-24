@@ -9,7 +9,6 @@ import { InformacionComponent } from './components/informacion/informacion.compo
 import { InicioComponent } from './components/inicio/inicio.component';
 import { CotizacionComponent } from './components/cotizacion/cotizacion.component';
 import { faqComponent } from './components/faq/faq.component';
-import { RespuestaforoComponent } from './components/Respuestas_foro/Respuestas_foro.component';
 
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { ServiceService } from './services/service.service'
@@ -22,8 +21,7 @@ import { ServiceService } from './services/service.service'
     InformacionComponent,
     InicioComponent,
     CotizacionComponent,
-    faqComponent,
-    RespuestaforoComponent
+    faqComponent
   ],
   imports: [
     BrowserModule,
