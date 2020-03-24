@@ -33,5 +33,9 @@ describe('CotizacionComponent', () => {
 
   it('Metodo generarTotal debe de ser igual o mayor a 0', () => {
     expect(component.generarTotal()).toBeGreaterThanOrEqual(0);
+  });
+
+  it('Metodo isNumber valida si la entrada es un numero', () => {
+    expect(component.isNumber(1000)).toBeTruthy();
   })
 });

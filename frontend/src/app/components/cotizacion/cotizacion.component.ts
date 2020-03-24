@@ -113,6 +113,15 @@ export class CotizacionComponent implements OnInit {
     }
   }
 
+  isNumber(num: any) {
+    var reg = new RegExp('^[0-9]+$');
+
+    if(reg.test(num))
+      return true;
+    else
+      return false;
+  }
+
   eliminarServicio(pos: number) {
     let nuevo = [];
     for(let i = 0; i < this.servicios.length; i ++) {
