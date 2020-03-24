@@ -127,9 +127,9 @@ export class CotizacionComponent implements OnInit {
   generarTotal(): number {
     let total: number = 0;
     for(let i = 0; i < this.servicios.length; i++) {
-      total += this.redondear(this.servicios[i].cantidad * this.servicios[i].servicio.precio);
+      total += this.servicios[i].cantidad * this.servicios[i].servicio.precio;
     }
-    return total;
+    return this.redondear(total);
   }
 
   redondear(numero: number) {
