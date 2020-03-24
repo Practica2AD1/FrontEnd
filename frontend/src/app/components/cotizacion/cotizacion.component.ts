@@ -132,8 +132,7 @@ export class CotizacionComponent implements OnInit {
     return this.redondear(total);
   }
 
-  redondear(numero: number) {
+  redondear(numero: number) :number{
     return Math.round(numero * 100) / 100;
   }
-
 }
