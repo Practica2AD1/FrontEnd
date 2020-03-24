@@ -1,0 +1,25 @@
+
+.top-nav {
+    margin-top: 10px;
+  }
+  .centrado{
+    text-align: center;
+  }
+
+  .fields {
+    margin-top: 15px;
+    margin-bottom: 15px;
+
+    max-width: 70% !important;
+    margin-left: auto;
+    margin-right: auto; 
+}
+
+
+h1{
+  font:20px "Biome Light";  
+  }
+
+ h2,p{
+    font:18px "Biome Light";  
+    }
