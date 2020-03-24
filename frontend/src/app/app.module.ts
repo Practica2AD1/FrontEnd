@@ -8,19 +8,23 @@ import { ContactoComponent } from './components/contacto/contacto.component';
 import { InformacionComponent } from './components/informacion/informacion.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { CotizacionComponent } from './components/cotizacion/cotizacion.component';
+import { faqComponent } from './components/faq/faq.component';
 
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
     ContactoComponent,
     InformacionComponent,
     InicioComponent,
-    CotizacionComponent
+    CotizacionComponent,
+    faqComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
