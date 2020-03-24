@@ -25,7 +25,7 @@ describe('InformacionComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('debe iniciar con la foto inicial', () => {
+  it('deberia de verse la foto inicial', () => {
     expect(component.currentPhoto).toEqual(0);
   });
 });
