@@ -8,9 +8,9 @@ describe('CotizacionComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CotizacionComponent ]
+      declarations: [CotizacionComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -37,5 +37,45 @@ describe('CotizacionComponent', () => {
 
   it('Metodo isNumber valida si la entrada es un numero', () => {
     expect(component.isNumber(1000)).toBeTruthy();
-  })
+  });
+  
+  it(`deberia que cambie nombre`, () => {
+    const r = new CotizacionComponent();
+    r.changeNombre("juan");
+    expect(r.nombre).toEqual("juan")
+  });
+
+  it(`deberia que cambie apellido`, () => {
+    const r = new CotizacionComponent();
+    r.changeApellido("osuna");
+    expect(r.apellido).toEqual("osuna")
+  });
+
+  it(`deberia que cambie correo`, () => {
+    const r = new CotizacionComponent();
+    r.changeCorreo("juan@gmail.com");
+    expect(r.correo).toEqual("juan@gmail.com")
+  });
+
+  it(`deberia que agrege servicio`, () => {
+    const r = new CotizacionComponent();
+    r.addServices();
+  });
+
+  it(`deberia que eliminar servicio`, () => {
+    const r = new CotizacionComponent();
+    r.eliminarServicio(2);
+  });
+
+  it(`retornar un total`, () => {
+    const r = new CotizacionComponent();
+    r.generarTotal();
+  });
+
+  it(`deberia redondear`, () => {
+    const r = new CotizacionComponent();
+    const numero = r.redondear(4.3);
+    expect(numero).toEqual(4.3)
+  });
+
 });

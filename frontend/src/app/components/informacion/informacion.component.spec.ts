@@ -9,8 +9,8 @@ describe('InformacionComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [ HttpClientTestingModule ],
-      declarations: [ InformacionComponent ]
+      declarations: [ InformacionComponent ],
+      imports: [HttpClientTestingModule]
     })
     .compileComponents();
   }));

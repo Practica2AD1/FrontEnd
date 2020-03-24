@@ -59,6 +59,5 @@ export class PreguntaRespuestaService {
     return datos;
 
   }
-  
-  
+    
 }
