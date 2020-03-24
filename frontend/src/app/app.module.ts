@@ -10,6 +10,8 @@ import { InformacionComponent } from './components/informacion/informacion.compo
 import { InicioComponent } from './components/inicio/inicio.component';
 import { CotizacionComponent } from './components/cotizacion/cotizacion.component';
 
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,

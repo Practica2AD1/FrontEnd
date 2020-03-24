@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ServiceService } from 'src/app/services/service.service';
+import { Imagen } from 'src/app/models/imagen';
 
 @Component({
   selector: 'app-contacto',
@@ -30,9 +32,16 @@ export class ContactoComponent implements OnInit {
 
   devs: any[] =  [ this.dev1,this.dev2,this.dev3,this.dev4,this.dev5]
 
-  constructor() { }
+  imagen: Imagen ={
+    pathImagen: "assets/pictures/404.jpg"
+  }
+
+  constructor(private service: ServiceService) { }
 
   ngOnInit() {
+    this.service.getImagen('imagen6').subscribe(res =>{
+      this.imagen = res as Imagen;
+    });
   }
 
 }
