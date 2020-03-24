@@ -1,65 +1,94 @@
-<div class="container">
-  <div class="card">
-    <div class="card-content">
+<div class="container top-nav">
 
-        <span class="card-title">Informacion General</span>
-        <p>
+  <div class="card mb-3">
+
+    <h5 class="card-header">Informacion General</h5>
+
+    <div class="card-body">
+
+        <p class="card-text">
           Si tiene algún problema en los sistemas mecánicos de su vehículo, no dude en acudir nuesto taller para solucionarlo, ya que contamos
           con los últimos equipos de análisis y recambios auténticos acordes a la normativa de los fabricantes.
         </p>
-        <br />
-        <p>
+        <p class="card-text">
           En caso de avería de su coche, nuestro personal se encuentra altamente cualificado y preparado para hacer que todo vuelva a funcionar.
           Gracias a los numerosos años de experiencia, al uso de los últimos equipos de análisis y al acceso a los datos técnicos necesarios,
           nuestros especialistas realizarán de manera rápida y profesional cualquier trabajo mecánico que precise su vehículo.
         </p>
-        <br />
-        <p>
+        <p class="card-text">
           Hemos atendido el mercado Automotriz guatemalteco por muchos años y seguimos trabajando con pasión, gracias a Dios y a nuestros clientes.
           Atendemos a cualquiera que nos visita.
         </p>
 
-        <div class="card-action">
-          <div class="card-deck">
-              <div class="card">
-                <img class="card-img-top" width="200" height="200" src="{{ photos[0] }}" alt="taller1">
-              </div>
-              <div class="card">
-                <img class="card-img-top" width="200" height="200" src="{{ photos[1] }}" alt="taller2">
-              </div>
-              <div class="card">
-                <img class="card-img-top" width="200" height="200" src="{{ photos[2] }}" alt="taller3">
-              </div>
-          </div>
+      <div class="card mx-auto" style="max-width: 600px;">
+        <div id="myCarousel"  class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
 
-          <div class="row">
-            <div class="col">
-              <div class="card">
-                <h5 class="card-header">Mision</h5>
-                <div class="card-body">
-                  <p class="card-text">Proporcionar un buen servicio de mantenimiento automotriz en general,
-                    conservando los autos de nuestros clientes en un estado de operación eficiente y seguro,
-                    satisfaciendo sus necesidades y expectativas en el mejor tiempo posible. A sabiendas de que usted y su vehículo son
-                    lo más importante. </p>
-
+              <div *ngFor="let photo of photos; let i = index">
+                <div class="{{ currentPhoto === i ? 'carousel-item active': 'carousel-item' }}">
+                  <img src="{{ photo }}" class="d-block w-100 size-img" alt="...">
                 </div>
               </div>
-            </div>
 
-            <div class="col">
-              <div class="card">
-                <h5 class="card-header">Vision</h5>
-                <div class="card-body">
-                  <p class="card-text">Llegar a ser el taller líder y confiable a nivel zona, en los próximos 3 años,
-                     una vez cumplido ese objetivo mantenernos como los mejores en el mercado, ofreciendo el
-                     servicio para automóviles modernos y unidades diésel, siendo reconocidos por la calidad en
-                     nuestros servicios, honestidad y precios justos.</p>
-                </div>
-              </div>
             </div>
-          </div>
+            <a class="carousel-control-prev" role="button" (click)="prev()">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" role="button" (click)="next()">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
         </div>
+      </div>
+
     </div>
+
+    <div class="card-footer">
+      <div class="card-columns">
+
+        <!--<div class="col">-->
+          <div class="card">
+            <h5 class="card-header">Empresa</h5>
+            <div class="card-body">
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Telefono: {{contactoEmpresa.telefono}}</li>
+                <li class="list-group-item">Direccion: {{contactoEmpresa.direccion}}</li>
+                <li class="list-group-item">Correo: {{contactoEmpresa.correo}}</li>
+              </ul>
+            </div>
+          </div>
+        <!--</div>-->
+
+        <!--<div class="col">-->
+          <div class="card">
+            <h5 class="card-header">Mision</h5>
+            <div class="card-body">
+              <p class="card-text">Proporcionar un buen servicio de mantenimiento automotriz en general,
+                conservando los autos de nuestros clientes en un estado de operación eficiente y seguro,
+                satisfaciendo sus necesidades y expectativas en el mejor tiempo posible. A sabiendas de que usted y su vehículo son
+                lo más importante. </p>
+
+            </div>
+          </div>
+        <!--</div>-->
+
+        <!--<div class="col">-->
+          <div class="card">
+            <h5 class="card-header">Vision</h5>
+            <div class="card-body">
+              <p class="card-text">Llegar a ser el taller líder y confiable a nivel zona, en los próximos 3 años,
+                 una vez cumplido ese objetivo mantenernos como los mejores en el mercado, ofreciendo el
+                 servicio para automóviles modernos y unidades diésel, siendo reconocidos por la calidad en
+                 nuestros servicios, honestidad y precios justos.</p>
+            </div>
+          </div>
+        <!--</div>-->
+
+      </div>
+    </div>
+
+
   </div>
 
 </div>

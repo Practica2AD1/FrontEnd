@@ -1,0 +1,176 @@
+<div class="container top-nav">
+
+  <div class="card">
+    <div class="card-header">Cotizacion</div>
+    <div class="card-body">
+
+      <div>
+
+        <div class="row">
+
+          <div class="col">
+
+            <div class="row">
+
+              <div class="col-md-12 mb-3">
+                <label for="idcategorias">Categorias</label>
+                <select class="custom-select"
+                  (change)="changeCategoria($event.target.value)"
+                  id="idcategorias">
+                  <option disabled selected>Categorias</option>
+                  <option *ngFor="let categoria of categorias">{{categoria.nombre}}</option>
+                </select>
+              </div>
+
+            </div>
+
+
+            <div class="row">
+
+              <div class="col-md-12 mb-3">
+                <label for="idservicios">Producto (P) / Servicio (S)</label>
+                <select class="custom-select"
+                      (change)="changeServicios($event.target.value)"
+                      id="idservicios">
+                  <option selected disabled>Productos / Servicios</option>
+                  <option *ngFor="let servicio of currentServicios">{{servicio.nombre}}</option>
+                </select>
+              </div>
+
+            </div>
+
+            <div class="row">
+
+              <div class="col">
+                <button type="button"
+                  (click)="addServices()"
+                  class="btn btn-primary">
+                    Agregar
+                </button>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="col">
+
+            <div class="row">
+
+              <div class="col-md-6 mb-3">
+                <label for="validationServer01">Nombre</label>
+                <input type="text"
+                        class="form-control"
+                        id="validationServer01"
+                        (input)="changeNombre($event.target.value)"
+                        required>
+              </div>
+
+              <div class="col-md-6 mb-3">
+                <label for="validationServer02">Apellido</label>
+                <input type="text"
+                        class="form-control"
+                        id="validationServer02"
+                        (input)="changeApellido($event.target.value)"
+                        required>
+              </div>
+
+            </div>
+
+            <div class="row">
+
+              <div class="col-md-6 mb-3">
+                <label for="validationServer02">Fecha</label>
+                <input type="text"
+                        class="form-control"
+                        id="validationServer02"
+                        value="{{ fecha }}"
+                        disabled>
+              </div>
+
+              <div class="col-md-6 mb-3">
+                <label for="validationServerUsername">Correo</label>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroupPrepend3">@</span>
+                  </div>
+                  <input type="email"
+                          class="form-control"
+                          id="validationServerUsername"
+                          (input)="changeCorreo($event.target.value)"
+                          required>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+        <br />
+
+        <div class="row">
+          <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Cantidad</th>
+                <th scope="col">P / S</th>
+                <th scope="col">Descripcion</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Precio Total</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+
+                <tr *ngFor="let servicio of servicios; let i = index">
+                  <th scope="row">
+                    <input
+                      type="number"
+                      class="form-control"
+                      value="1" min="1"
+                      style="max-width: 80px"
+                      (change)= "changeCantidad(i, $event.target.value)"
+                      >
+                  </th>
+                  <td>{{ servicio.servicio.nombre }}</td>
+                  <td>{{ servicio.servicio.descripcion }}</td>
+                  <td>Q {{ servicio.servicio.precio }}</td>
+                  <td>Q {{ redondear(servicio.servicio.precio * servicio.cantidad) }}</td>
+                  <td>
+                    <button type="button"
+                      (click)="eliminarServicio(i)"
+                      class="btn btn-danger">Eliminar</button>
+                  </td>
+                </tr>
+
+            </tbody>
+
+            <thead class="thead-light">
+              <tr>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col">Total</th>
+                <th scope="col">Q {{ generarTotal() }}</th>
+                <th></th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+
+</div>

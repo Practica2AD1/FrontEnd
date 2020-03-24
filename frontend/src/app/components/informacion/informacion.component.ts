@@ -16,8 +16,26 @@ export class InformacionComponent implements OnInit {
   ];
   currentPhoto = 0;
 
-  constructor() { }
+  contactoEmpresa = {
+    telefono: "22364578",
+    direccion: "direccion",
+    correo: "correo1@gmail.com"
+  };
+
+  constructor() {
+    //ir a traer las photos que se guarden desde el servidor
+  }
 
   ngOnInit() {
+  }
+
+  prev() {
+    if(this.currentPhoto > 0)
+      this.currentPhoto--;
+  }
+
+  next() {
+    if(this.currentPhoto < this.photos.length-1)
+      this.currentPhoto++;
   }
 }
