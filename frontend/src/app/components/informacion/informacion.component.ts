@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
 
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -39,7 +38,7 @@ export class InformacionComponent implements OnInit {
     "https://i.pinimg.com/originals/b1/fb/3b/b1fb3bc0c4161cdf7e44ebdc2596fc9b.jpg",
     "https://i2.bssl.es/highmotor/2017/07/taller-mecanico-coche-3.jpg"
   ];
-  currentPhoto = 0;
+  currentPhoto;
 
   contactoEmpresa = {
     telefono: "22364578",
@@ -51,6 +50,7 @@ export class InformacionComponent implements OnInit {
 
   constructor(private httpClient: HttpClient) {
     //ir a traer las photos que se guarden desde el servidor
+    this.currentPhoto = 0;
     this.obtenerInfoEmpresa();
   }
 
@@ -79,12 +79,12 @@ export class InformacionComponent implements OnInit {
     return this.httpClient.get<any>(serverAddress, httpOptions);
   }
 
-  prev() {
+  prev(): void {
     if(this.currentPhoto > 0)
       this.currentPhoto--;
   }
 
-  next() {
+  next(): void {
     if(this.currentPhoto < this.photos.length-1)
       this.currentPhoto++;
   }

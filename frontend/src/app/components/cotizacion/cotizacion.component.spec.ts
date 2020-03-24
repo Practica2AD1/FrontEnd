@@ -23,6 +23,22 @@ describe('CotizacionComponent', () => {
     expect(component).toBeTruthy();
   });
 
+  it('no deberia tener un servicio actual seleccionado', () => {
+    expect(component.currentServicio).toBeNull();
+  });
+
+  it('deberia redondear numero a dos decimales maximo', () => {
+    expect(component.redondear(10.16666667)).toEqual(10.17);
+  });
+
+  it('deberia ser mayor o igual a 0', () => {
+    expect(component.generarTotal()).toBeGreaterThanOrEqual(0);
+  });
+
+  it('deberia ser verdadero si es un numero', () => {
+    expect(component.isNumber(1000)).toBeTruthy();
+  });
+
   it(`deberia que cambie nombre`, () => {
     const r = new CotizacionComponent();
     r.changeNombre("juan");
