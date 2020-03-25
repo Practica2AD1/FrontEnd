@@ -20,14 +20,7 @@ export class faqComponent implements OnInit  {
     
     this.prguntas = this.serv.obtener_pregunta();
     this.respuestas = this.serv.obtener_respuesta();
- /*   const json ={
-      estadoRespuesta:1
 
-    }
- 
-    
-    this.serv.update_pregunta(1,JSON.stringify(json)).subscribe();
-*/
 
   }
 

@@ -24,4 +24,7 @@ describe('faqComponent', () => {
   it('Componente Creado Correctamente', () => {
     expect(component).toBeTruthy();
   });
+
+
+
 });

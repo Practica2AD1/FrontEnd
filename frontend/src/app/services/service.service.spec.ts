@@ -24,6 +24,17 @@ describe('ServiceService', () => {
     const service: ServiceService = TestBed.get(ServiceService);
     expect(service).toBeTruthy();
   });
+  //-------------------------
+  it('Servicion Creado Correctamente', () => {
+    const service: ServiceService = TestBed.get(ServiceService);
+    expect(service.URL).toBeTruthy();
+  });
+
+  it('Servicion Creado Correctamente', () => {
+    const service: ServiceService = TestBed.get(ServiceService);
+    expect(service.getImagen).toBeTruthy();
+  });
+
 
 
 });

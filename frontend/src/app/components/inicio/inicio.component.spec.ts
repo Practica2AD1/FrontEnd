@@ -36,4 +36,12 @@ describe('InicioComponent', () => {
     expect(component).toBeTruthy();
   });
 
+
+
+  it('Servicio Creado Correctamente', () => {
+    component.vision.pathImagen="";
+    component.ngOnInit();
+  });
+  
+  
 });
