@@ -59,5 +59,16 @@ export class PreguntaRespuestaService {
     return datos;
 
   }
+  
+  agregar_respuesta(nueva): Observable<void> {
     
+    this.url = "https://analisis1practica.herokuapp.com/api/respuesta";
+    
+    var datos= this.http.post<void>(this.url,nueva,this.httpOptions).pipe(/*retry(2),*/catchError(this.handleError)/**/)
+    console.log(datos);
+   
+    return datos;
+
+  }
+  
 }
