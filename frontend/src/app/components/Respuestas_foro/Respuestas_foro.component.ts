@@ -12,25 +12,46 @@ import {Observable} from 'rxjs';
 export class RespuestaforoComponent implements OnInit  {
 
   prguntas : Observable<Pregunta>;
-  respuestas : Observable<Respuestas>;
 
+  private resp : string;
+  private resp1 : string;
+ 
   constructor( private serv :PreguntaRespuestaService) { }
-
+  
   ngOnInit() {
     
     this.prguntas = this.serv.obtener_pregunta();
-    this.respuestas = this.serv.obtener_respuesta();
- /*   const json ={
+    
+   const json ={
       estadoRespuesta:1
 
     }
  
     
     this.serv.update_pregunta(1,JSON.stringify(json)).subscribe();
-*/
+
 
   }
 
+  Responder(){
+    
+    console.log(this.resp);
+    console.log(this.resp1);
+    const update ={
+      estadoRespuesta:1
 
+    }
+   
+  const post ={
+    respuesta: this.resp,
+    RESPUESTA_idPregunta :this.resp1
+
+  }
+    this.serv.agregar_respuesta(JSON.stringify(post)).subscribe();
+    this.serv.update_pregunta(this.resp1,JSON.stringify(update)).subscribe();
+
+    this.prguntas = this.serv.obtener_pregunta();
+    
+  }
 
 }
